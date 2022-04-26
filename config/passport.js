@@ -25,7 +25,7 @@ module.exports = function (passport) {
                     done(null, user)
                 } else {
                     user = await User.create(newUser)
-                    done(null)
+                    done(null, user)
                 }
             } catch (err) {
                 console.log(err)
@@ -38,7 +38,7 @@ module.exports = function (passport) {
         callbackURL: '/auth/twitch/callback',
         scope: 'user_read'
     },
-        async (accessToken, refreshToken, profile, done) => {  
+        async (accessToken, refreshToken, profile, done) => {
             const newUser = {
                 apiId: profile.id,
                 apiType: 'Twitch',
@@ -54,18 +54,19 @@ module.exports = function (passport) {
                     done(null, user)
                 } else {
                     user = await User.create(newUser)
-                    done(null)
+                    done(null, user)
                 }
             } catch (err) {
                 console.log(err)
             }
         }))
 
-    passport.serializeUser((user, done) =>
+    passport.serializeUser((user, done) => {
         done(null, user.id)
-    )
-
-    passport.deserializeUser((user, done) => {
-        User.findById(user.id, (err, user) => done(err, user))
     })
+
+    passport.deserializeUser((id, done) => {
+        User.findById(id, (err, user) => done(err, user))
+    })
+
 }
