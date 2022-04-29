@@ -20,8 +20,8 @@ const StorySchema = new mongoose.Schema({
         ref: 'User',
     },
     createdAt: {
-        type: String,
-        default: Date.now
+        type: Date,
+        default: Date.now()
     }
 })
 
