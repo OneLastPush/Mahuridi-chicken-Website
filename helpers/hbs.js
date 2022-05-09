@@ -42,4 +42,13 @@ module.exports = {
         ' selected="selected"$&'
       )
   },
+  i18n: function () {
+    return i18n.__.apply(this, arguments);
+  },
+  __n: function () {
+    return i18n.__n.apply(this, arguments);
+  },
+  url: function (name) {
+    return urls[name];
+  },
 }

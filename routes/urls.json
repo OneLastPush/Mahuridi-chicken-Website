@@ -1,0 +1,9 @@
+{
+    "home": "/batches/add",
+
+
+    "createBatch" : "/batches/add",
+    "userProfile": "/user/profile/",
+    "contact": "/contact",
+    "about": "/about"
+}

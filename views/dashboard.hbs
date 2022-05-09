@@ -5,21 +5,21 @@
     <table class="striped">
         <thead>
             <tr>
-                <th>Title</th>
+                <th>Name</th>
                 <th>Date</th>
-                <th>Status</th>
+                <th>Type</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             {{#each batches}}
                 <tr>
-                    <td><a href="/batches/{{_id}}">{{title}}</a></td>
+                    <td><a href="/batches/{{_id}}">{{name}}</a></td>
                     <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
-                    <td><span class="dash-status">{{status}}</span></td>
+                    <td><span class="dash-status">{{type}}</span></td>
                     <td>
                         <a href="/batches/edit/{{_id}}" class="btn btn-float">
-                            <i class="fas fa-edit"></i>
+                            <i class="fas fa-plus"></i>
                         </a>
                         
                         <form action="/batches/{{_id}}" method="POST" id="delete-form">
