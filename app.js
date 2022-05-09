@@ -77,7 +77,7 @@ i18nModule.configure({
 
 app.set('view engine', '.hbs')
 
-app.use(i18nModule.init);
+app.use(i18nModule.init)
 
 // Sessions 
 app.use(session({

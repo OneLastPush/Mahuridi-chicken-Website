@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
+const i18n = require('i18n')
 
 const Batch = require('../models/Batch')
 
