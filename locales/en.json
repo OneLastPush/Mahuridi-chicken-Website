@@ -1,4 +1,13 @@
 {
     "Title": "English",
-    "SwitchLocal" : "fr"
+    "SwitchLocal" : "fr",
+    
+    "CancelLabel": "Annulez",
+    "nameLabel": "Name",
+    "stageLabel": "Stage",
+    "new" : "New",
+    "incubation" : "Incubation",
+    "hatched": "Hatched",
+    "ended": "Ended"
+    
 }

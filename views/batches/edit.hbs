@@ -1,25 +1,37 @@
-<h3>Edit Story</h3>
+<h3></h3>
 <div class="row">
-    <form action="/batches/{{batch._id}}" method="POST" class="col s12">
-    <input type="hidden" name="_method" value="PUT">
+    <form action="{{url "batches"}}/{{batch._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
         <div class="row">
             <div class="input-field">
-                <input type="text" id="name" name="name" value="">
-                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="{{batch.name}}">
+                <label for="name">{{i18n "nameLabel"}}</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field">
-                <select id="status" name="status">
-                    {{!-- {{#select story.status}}--}}
-                    <option value="public" selected>Public</option>
-                    <option value="private">Private</option>
-                    {{!-- {{/select}}  --}}
+                <select id="stageEditBatch" name="stage">
+                    {{#select batch.stage}}
+                    <option value="New" selected>{{i18n "new"}}</option>
+                    <option value="Incubation">{{i18n "incubation"}}</option>
+                    <option value="Hatched">{{i18n "hatched"}}</option>
+                    <option value="Ended">{{i18n "ended"}}</option>
+                    {{/select}}
                 </select>
-                <label for="status">Status</label>
+                <label for="stage">{{i18n "stageLabel"}}</label>
             </div>
         </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="{{url "dashboard"}}" class="btn orange" style="margin-bottom: 0px">{{i18n "CancelLabel"}}</a>
+        </div>
+
+    </form>
+    <form action="/batches/{{batch._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        
 
         <div class="row">
             <div class="input-field">

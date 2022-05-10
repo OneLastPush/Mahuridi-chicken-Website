@@ -1,4 +1,12 @@
 {
     "Title": "French",
-    "SwitchLocal" : "en"
+    "SwitchLocal" : "en",
+    
+    "CancelLabel": "Annulez",
+    "nameLabel": "Nom",
+    "stageLabel": "Étape",
+    "new" : "Nouveau",
+    "incubation" : "Incubation",
+    "hatched": "Éclos",
+    "ended": "Terminé"
 }

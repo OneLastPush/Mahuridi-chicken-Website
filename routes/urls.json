@@ -1,9 +1,5 @@
 {
-    "home": "/batches/add",
-
-
+    "batches": "/batches",
     "createBatch" : "/batches/add",
-    "userProfile": "/user/profile/",
-    "contact": "/contact",
-    "about": "/about"
+    "dashboard": "/dashboard"
 }

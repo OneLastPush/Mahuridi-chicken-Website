@@ -103,6 +103,13 @@ router.put('/:id', ensureAuth, async (req, res) => {
         if (batch.user != req.user.id) {
             res.redirect('/batches')
         } else {
+            batch.updatedAt = Date.now()
+            if (batch.stage === "Ended") {
+                batch.active = false
+            } else {
+                batch.active = true
+            }
+
             batch = await Batch.findOneAndUpdate({ _id: req.params.id }, req.body, {
                 new: true,
                 runValidators: true,
