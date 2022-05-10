@@ -1,6 +1,6 @@
 <h3></h3>
 <div class="row">
-    <form action="{{url "batches"}}/{{batch._id}}" method="POST" class="col s12">
+    <form action="{{url " batches"}}/{{batch._id}}" method="POST" class="col s12">
         <input type="hidden" name="_method" value="PUT">
         <div class="row">
             <div class="input-field">
@@ -13,10 +13,10 @@
             <div class="input-field">
                 <select id="stageEditBatch" name="stage">
                     {{#select batch.stage}}
-                    <option value="New" selected>{{i18n "new"}}</option>
-                    <option value="Incubation">{{i18n "incubation"}}</option>
-                    <option value="Hatched">{{i18n "hatched"}}</option>
-                    <option value="Ended">{{i18n "ended"}}</option>
+                    <option value="New" selected>{{i18n "newOption"}}</option>
+                    <option value="Incubation">{{i18n "incubationOption"}}</option>
+                    <option value="Hatched">{{i18n "hatchedOption"}}</option>
+                    <option value="Ended">{{i18n "endedOption"}}</option>
                     {{/select}}
                 </select>
                 <label for="stage">{{i18n "stageLabel"}}</label>
@@ -25,18 +25,49 @@
 
         <div class="row">
             <input type="submit" value="Save" class="btn">
-            <a href="{{url "dashboard"}}" class="btn orange" style="margin-bottom: 0px">{{i18n "CancelLabel"}}</a>
+            <a href="{{url " dashboard"}}" class="btn orange" style="margin-bottom: 0px">{{i18n "CancelLabel"}}</a>
         </div>
 
     </form>
-    <form action="/batches/{{batch._id}}" method="POST" class="col s12">
-        <input type="hidden" name="_method" value="PUT">
-        
+    <form action="{{url "batches"}}/{{batch._id}}{{url "entry" }}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="POST">
 
         <div class="row">
             <div class="input-field">
-                <h5>Tell Us Your Story:</h5>
-                <textarea id="body" name="body"></textarea>
+                <input type="number" id="quantity" name="quantity" value="" min="1" max="99999" required>
+                <label for="quantity">{{i18n "quantityLabel"}}</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="date" id="entryDate" name="entryDate" required>
+                <label for="entryDate">{{i18n "entryDateLabel"}}</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="typeEntrySelect" name="type">
+                    <option value="Purchased" selected>{{i18n "purchasedOption"}}</option>
+                    <option value="Death">{{i18n "deathOption"}}</option>
+                    <option value="Sold">{{i18n "soldOption"}}</option>
+                </select>
+                <label for="type">{{i18n "typeEntryLabel"}}</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="totalPrice" name="totalPrice">
+                <label for="totalPrice">{{i18n "totalPriceLabel"}}</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Note:</h5>
+                <textarea id="note" name="note" maxlength="255"></textarea>
             </div>
         </div>
 

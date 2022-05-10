@@ -2,11 +2,20 @@
     "Title": "French",
     "SwitchLocal" : "en",
     
+    "typeEntryLabel": "Type d'entrée",
+    "totalPriceLabel": "Montant déboursé",
+    "entryDateLabel": "Date",
+    "quantityLabel": "Quantité",
     "CancelLabel": "Annulez",
     "nameLabel": "Nom",
     "stageLabel": "Étape",
-    "new" : "Nouveau",
-    "incubation" : "Incubation",
-    "hatched": "Éclos",
-    "ended": "Terminé"
+
+    "newOption" : "Nouveau",
+    "incubationOption" : "Incubation",
+    "hatchedOption": "Éclos",
+    "endedOption": "Terminé",
+
+    "purchasedOption" : "Achat",
+    "deathOption": "Décès",
+    "soldOption": "Vente"
 }

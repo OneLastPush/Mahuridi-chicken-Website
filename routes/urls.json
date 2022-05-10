@@ -1,5 +1,7 @@
 {
     "batches": "/batches",
     "createBatch" : "/batches/add",
-    "dashboard": "/dashboard"
+    "dashboard": "/dashboard",
+    "entry": "/addEntry"
+
 }

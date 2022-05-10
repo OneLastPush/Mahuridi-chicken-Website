@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const EntrySchema = new mongoose.Schema({
-    Quantity: {
+    quantity: {
         type: Number,
         required: true,
         trim: true
@@ -14,7 +14,7 @@ const EntrySchema = new mongoose.Schema({
         type: Date,
         default: Date.now(),
     },
-    purchaseDate: {
+    entryDate: {
         type: Date,
         required: true,
     },

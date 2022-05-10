@@ -2,12 +2,21 @@
     "Title": "English",
     "SwitchLocal" : "fr",
     
+    "typeEntryLabel": "Entry type",
+    "totalPriceLabel": "Amount spent",
+    "entryDateLabel": "Date of purchase",
+    "quantityLabel": "Quantity",
     "CancelLabel": "Annulez",
     "nameLabel": "Name",
     "stageLabel": "Stage",
-    "new" : "New",
-    "incubation" : "Incubation",
-    "hatched": "Hatched",
-    "ended": "Ended"
     
+    "newOption" : "New",
+    "incubationOption" : "Incubation",
+    "hatchedOption": "Hatched",
+    "endedOption": "Ended",
+
+    "purchasedOption" : "Purchase",
+    "deathOption": "Death",
+    "soldOption": "Sold"
+
 }

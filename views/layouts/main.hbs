@@ -27,10 +27,11 @@
         M.Sidenav.init(document.querySelector('.sidenav'))
         M.FormSelect.init(document.querySelector('#typeOfBatchSelect'))
         M.FormSelect.init(document.querySelector('#stageEditBatch'))
+        M.FormSelect.init(document.querySelector('#typeEntrySelect'))
 
-        CKEDITOR.replace('body', {
+        {{!-- CKEDITOR.replace('body', {
             plugins: 'wysiwygarea, toolbar, basicstyles, link'
-        })
+        }) --}}
 
         function check(lang) {
             console.log(lang)
