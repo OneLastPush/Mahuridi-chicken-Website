@@ -1,7 +1,26 @@
 {
     "Title": "French",
     "SwitchLocalLabel" : "en",
-    
+    "AppName" : "Mahuridi chicken",
+
+    "AppSubTitle" : "La solution pour mieux gérer votre poulailler",
+
+    "ConnectWithGoogle" : "Se connecter avec Google",
+
+    "MyBatchesNavLabel" : "Mes lots",
+    "DashboardNavLabel" : "Tableau de bord",
+    "LogoutNavLabel" : "Déconnexion",
+
+    "DashboardTitle" : "Tableau de bord",
+    "Welcome" : "Bienvenue",
+    "DashboardBatchLabel" : "Voici la liste de vos lots de poule",
+    "DashboardNoBatchFound" : "Vous n'avez pas encore crée de lot",
+
+    "DashboardTableHeaderName": "Nom du lot",
+    "DashboardTableHeaderDate": "Date de création",
+    "DashboardTableHeaderType": "Type de lot",
+
+
     "typeEntryLabel": "Type d'entrée",
     "totalPriceLabel": "Montant déboursé",
     "entryDateLabel": "Date",

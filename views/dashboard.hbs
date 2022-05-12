@@ -1,13 +1,13 @@
-<h6>Dashboard</h6>
-<h3>Welcome {{name}}</h3>
-<p>Here are your egg batches</p>
+<h6>{{i18n "DashboardTitle" }}</h6>
+<h3>{{ i18n "Welcome" }} {{name}}</h3>
+<p>{{ i18n "DashboardBatchLabel" }}</p>
 {{#if batches}}
     <table class="striped">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Type</th>
+                <th>{{ i18n "DashboardTableHeaderName" }}</th>
+                <th>{{ i18n "DashboardTableHeaderDate" }}</th>
+                <th>{{ i18n "DashboardTableHeaderType" }}</th>
                 <th></th>
             </tr>
         </thead>
@@ -34,5 +34,5 @@
         </tbody>
     </table>
 {{else}}
-    <p>You have not created any egg batch</p>
+    <p>{{ i18n "DashboardNoBatchFound" }}</p>
 {{/if}}
