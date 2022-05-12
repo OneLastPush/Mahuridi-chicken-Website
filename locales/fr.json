@@ -1,6 +1,6 @@
 {
     "Title": "French",
-    "SwitchLocal" : "en",
+    "SwitchLocalLabel" : "en",
     
     "typeEntryLabel": "Type d'entrée",
     "totalPriceLabel": "Montant déboursé",

@@ -1,6 +1,6 @@
 {
     "Title": "English",
-    "SwitchLocal" : "fr",
+    "SwitchLocalLabel" : "fr",
     
     "typeEntryLabel": "Entry type",
     "totalPriceLabel": "Amount spent",
