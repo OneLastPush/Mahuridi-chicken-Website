@@ -35,9 +35,6 @@ const BatchSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     },
-    Quantity: {
-        type: Number,
-    },
 })
 
 module.exports = mongoose.model('Batch', BatchSchema)

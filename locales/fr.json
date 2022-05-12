@@ -20,9 +20,9 @@
     "DashboardTableHeaderDate": "Date de création",
     "DashboardTableHeaderType": "Type de lot",
 
-
     "typeEntryLabel": "Type d'entrée",
-    "totalPriceLabel": "Montant déboursé",
+    "totalPriceLabel": "Montant déboursé (BIF)",
+    "NoteLabel": "Note",
     "entryDateLabel": "Date",
     "quantityLabel": "Quantité",
     "CancelLabel": "Annulez",
@@ -34,7 +34,17 @@
     "hatchedOption": "Éclos",
     "endedOption": "Terminé",
 
+    "editbatchTitle" : "Modifiez le lot",
+    "createBatchEntry" : "Créez une entrée",
+    "noBatchEntryFound": "Aucune entrée crée pour ce lot",
+
     "purchasedOption" : "Achat",
     "deathOption": "Décès",
-    "soldOption": "Vente"
+    "soldOption": "Vente",
+
+    "BatchEntryTableHeaderType": "Type",
+    "BatchEntryTableHeaderQuantity": "Quantité",
+    "BatchEntryTableHeaderTotalPrice": "Montant déboursé (BIF)",
+    "BatchEntryTableHeaderDate": "Date",
+    "BatchEntryTableHeaderNote": "Note"
 }

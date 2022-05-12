@@ -20,16 +20,20 @@ const EntrySchema = new mongoose.Schema({
     },
     totalPrice: {
         type: Number,
-        required: true,
     },
     type: {
         type: String,
         required: true,
         enum: ['Purchased','Death','Sold']
     },
-    Note: {
+    note: {
         type: String,
         maxlength: 255,
+        trim: true,
+    },
+    batch: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Batch',
     }
 })
 

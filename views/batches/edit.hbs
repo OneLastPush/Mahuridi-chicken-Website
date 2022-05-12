@@ -1,79 +1,117 @@
 <h3></h3>
 <div class="row">
-    <form action="{{url " batches"}}/{{batch._id}}" method="POST" class="col s12">
-        <input type="hidden" name="_method" value="PUT">
-        <div class="row">
-            <div class="input-field">
-                <input type="text" id="name" name="name" value="{{batch.name}}">
-                <label for="name">{{i18n "nameLabel"}}</label>
+    <div class="card center-align">
+        <h5 class="card-title">{{ i18n "editbatchTitle" }}</h5>
+        <form class="card-content" action="{{url " batches"}}/{{batch._id}}" method="POST" class="col s12">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="row">
+                <div class="input-field">
+                    <input type="text" id="name" name="name" value="{{batch.name}}">
+                    <label for="name">{{i18n "nameLabel"}}</label>
+                </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="input-field">
-                <select id="stageEditBatch" name="stage">
-                    {{#select batch.stage}}
-                    <option value="New" selected>{{i18n "newOption"}}</option>
-                    <option value="Incubation">{{i18n "incubationOption"}}</option>
-                    <option value="Hatched">{{i18n "hatchedOption"}}</option>
-                    <option value="Ended">{{i18n "endedOption"}}</option>
-                    {{/select}}
-                </select>
-                <label for="stage">{{i18n "stageLabel"}}</label>
+            <div class="row">
+                <div class="input-field">
+                    <select id="stageEditBatch" name="stage">
+                        {{#select batch.stage}}
+                        <option value="New" selected>{{i18n "newOption"}}</option>
+                        <option value="Incubation">{{i18n "incubationOption"}}</option>
+                        <option value="Hatched">{{i18n "hatchedOption"}}</option>
+                        <option value="Ended">{{i18n "endedOption"}}</option>
+                        {{/select}}
+                    </select>
+                    <label for="stage">{{i18n "stageLabel"}}</label>
+                </div>
             </div>
-        </div>
-
-        <div class="row">
-            <input type="submit" value="Save" class="btn">
-            <a href="{{url " dashboard"}}" class="btn orange" style="margin-bottom: 0px">{{i18n "CancelLabel"}}</a>
-        </div>
-
-    </form>
-    <form action="{{url "batches"}}/{{batch._id}}{{url "entry" }}" method="POST" class="col s12">
-        <input type="hidden" name="_method" value="POST">
-
-        <div class="row">
-            <div class="input-field">
-                <input type="number" id="quantity" name="quantity" value="" min="1" max="99999" required>
-                <label for="quantity">{{i18n "quantityLabel"}}</label>
+            <div class="row">
+                <input type="submit" value="Save" class="btn">
+                <a href="{{url "dashboard"}}" class="btn orange" style="margin-bottom: 0px">{{i18n
+                    "CancelLabel"}}</a>
             </div>
-        </div>
+        </form>
+    </div>
+</div>
 
-        <div class="row">
-            <div class="input-field">
-                <input type="date" id="entryDate" name="entryDate" required>
-                <label for="entryDate">{{i18n "entryDateLabel"}}</label>
+<div class="row">
+    <div class="card center-align">
+        <h5 class="card-title">{{ i18n "createBatchEntry" }}</h5>
+        <form action="{{ url "batches" }}/{{ batch._id }}{{ url "addEntry" }}" method="POST" class="card-content">
+            <input type="hidden" name="_method" value="POST">
+
+            <div class="row">
+                <div class="input-field">
+                    <input type="number" id="quantity" name="quantity" value="" min="1" max="99999" required>
+                    <label for="quantity">{{i18n "quantityLabel"}}</label>
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="input-field">
-                <select id="typeEntrySelect" name="type">
-                    <option value="Purchased" selected>{{i18n "purchasedOption"}}</option>
-                    <option value="Death">{{i18n "deathOption"}}</option>
-                    <option value="Sold">{{i18n "soldOption"}}</option>
-                </select>
-                <label for="type">{{i18n "typeEntryLabel"}}</label>
+            <div class="row">
+                <div class="input-field">
+                    <input type="date" id="entryDate" name="entryDate" required>
+                    <label for="entryDate">{{i18n "entryDateLabel"}}</label>
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="input-field">
-                <input type="number" id="totalPrice" name="totalPrice">
-                <label for="totalPrice">{{i18n "totalPriceLabel"}}</label>
+            <div class="row">
+                <div class="input-field">
+                    <select id="typeEntrySelect" name="type">
+                        <option value="Purchased" selected>{{i18n "purchasedOption"}}</option>
+                        <option value="Death">{{i18n "deathOption"}}</option>
+                        <option value="Sold">{{i18n "soldOption"}}</option>
+                    </select>
+                    <label for="type">{{i18n "typeEntryLabel"}}</label>
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="input-field">
-                <h5>Note:</h5>
-                <textarea id="note" name="note" maxlength="255"></textarea>
+            <div class="row">
+                <div class="input-field">
+                    <input type="number" id="totalPrice" name="totalPrice">
+                    <label for="totalPrice">{{i18n "totalPriceLabel"}}</label>
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <input type="submit" value="Save" class="btn">
-            <a href="/dashboard" class="btn orange" style="margin-bottom: 0px">Cancel</a>
-        </div>
-    </form>
+            <div class="row">
+                <div class="input-field">
+                    <h5 for="note">{{ i18n "NoteLabel" }}:</h5>
+                    <textarea id="note" name="note" maxlength="255"></textarea>
+                    
+                </div>
+            </div>
+
+            <div class="row">
+                <input type="submit" value="Save" class="btn">
+                <a href="{{url "dashboard"}}" class="btn orange" style="margin-bottom: 0px">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br />
+<div class="row">
+    {{#if entries}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>{{ i18n "BatchEntryTableHeaderType" }}</th>
+                <th>{{ i18n "BatchEntryTableHeaderQuantity" }}</th>
+                <th>{{ i18n "BatchEntryTableHeaderTotalPrice" }}</th>
+                <th>{{ i18n "BatchEntryTableHeaderDate" }}</th>
+                <th>{{ i18n "BatchEntryTableHeaderNote" }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each entries}}
+            <tr>
+                <td>{{ type }}</td>
+                <td>{{ quantity }}</td>
+                <td>{{ totalPrice }}</td>
+                <td>{{ formatDate entryDate 'MMMM Do YYYY' }}</td>
+                <td>{{ Note }}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <p>{{ i18n "noBatchEntryFound" }}</p>
+    {{/if}}
 </div>

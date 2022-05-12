@@ -81,7 +81,7 @@ app.use(i18nModule.init)
 
 // Sessions 
 app.use(session({
-    secret: 'keyboard cat',
+    secret: 'RUHhrymN9vyKov9DSi',
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({

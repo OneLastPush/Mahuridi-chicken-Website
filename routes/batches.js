@@ -3,6 +3,7 @@ const router = express.Router()
 const { ensureAuth } = require('../middleware/auth')
 
 const Batch = require('../models/Batch')
+const Entry = require('../models/Entry')
 
 //@desc     Show add page
 //@route    GET /batches/add
@@ -34,7 +35,7 @@ router.get('/:id', ensureAuth, async (req, res) => {
         if (!batch) {
             return res.render('error/404')
         }
-
+        
         res.render('batches/show', {
             batch
         })
@@ -70,7 +71,13 @@ router.get('/edit/:id', ensureAuth, async (req, res) => {
     try {
         const batch = await Batch.findOne({
             _id: req.params.id
-        }).lean()
+        })
+        .lean()
+
+        let entries = await Entry.find({
+            batch: req.params.id
+        })
+        .lean()
 
         if (!batch) {
             return res.render('error/404')
@@ -81,6 +88,7 @@ router.get('/edit/:id', ensureAuth, async (req, res) => {
         } else {
             res.render('batches/edit', {
                 batch,
+                entries
             })
         }
     } catch (err) {

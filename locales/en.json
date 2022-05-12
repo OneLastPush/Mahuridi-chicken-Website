@@ -15,12 +15,13 @@
     "Welcome" : "Welcome",
     "DashboardBatchLabel" : "Here are your egg batches",
 
-    "DashboardTableHeaderName": "Nom du lot",
-    "DashboardTableHeaderDate": "Date de création",
-    "DashboardTableHeaderType": "Type de lot",
+    "DashboardTableHeaderName": "Batch name",
+    "DashboardTableHeaderDate": "Creation date",
+    "DashboardTableHeaderType": "Batch type",
 
     "typeEntryLabel": "Entry type",
-    "totalPriceLabel": "Amount spent",
+    "totalPriceLabel": "Amount spent (BIF)",
+    "NoteLabel": "Note",
     "entryDateLabel": "Date of purchase",
     "quantityLabel": "Quantity",
     "CancelLabel": "Annulez",
@@ -32,8 +33,18 @@
     "hatchedOption": "Hatched",
     "endedOption": "Ended",
 
+    "editbatchTitle" : "Edit batch",
+    "createBatchEntry" : "Create a batch entry",
+    "noBatchEntryFound": "No entry created on this batch",
+
     "purchasedOption" : "Purchase",
     "deathOption": "Death",
-    "soldOption": "Sold"
+    "soldOption": "Sold",
+
+    "BatchEntryTableHeaderType": "Type",
+    "BatchEntryTableHeaderQuantity": "Quantity",
+    "BatchEntryTableHeaderTotalPrice": "Amount spent (BIF)",
+    "BatchEntryTableHeaderDate": "Date",
+    "BatchEntryTableHeaderNote": "Note"
 
 }

@@ -1,7 +1,8 @@
 {
     "batches": "/batches",
     "createBatch" : "/batches/add",
+    "editBatch" : "/batches/edit",
     "dashboard": "/dashboard",
-    "entry": "/addEntry"
+    "addEntry": "/addEntry"
 
 }
