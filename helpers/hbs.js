@@ -1,6 +1,6 @@
 const moment = require('moment')
 const i18n = require('i18n')
-var urls = require('../routes/urls.json');
+const urls = require('../routes/urls.json');
 
 module.exports = {
   formatDate: function (date, format) {

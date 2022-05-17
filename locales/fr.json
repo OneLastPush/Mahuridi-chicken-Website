@@ -46,5 +46,9 @@
     "BatchEntryTableHeaderQuantity": "Quantité",
     "BatchEntryTableHeaderTotalPrice": "Montant déboursé (BIF)",
     "BatchEntryTableHeaderDate": "Date",
-    "BatchEntryTableHeaderNote": "Note"
+    "BatchEntryTableHeaderNote": "Note",
+    "New" : "Nouveau",
+    "Incubation" : "Incubation",
+    "Hatched" : "Éclos",
+    "Ended" : "Fermez"
 }

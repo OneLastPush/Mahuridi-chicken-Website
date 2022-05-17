@@ -74,7 +74,7 @@
                 <div class="input-field">
                     <h5 for="note">{{ i18n "NoteLabel" }}:</h5>
                     <textarea id="note" name="note" maxlength="255"></textarea>
-                    
+
                 </div>
             </div>
 
@@ -90,24 +90,34 @@
 <br />
 <div class="row">
     {{#if entries}}
+    <h5>Details</h5>
     <table class="striped">
         <thead>
             <tr>
-                <th>{{ i18n "BatchEntryTableHeaderType" }}</th>
-                <th>{{ i18n "BatchEntryTableHeaderQuantity" }}</th>
-                <th>{{ i18n "BatchEntryTableHeaderTotalPrice" }}</th>
-                <th>{{ i18n "BatchEntryTableHeaderDate" }}</th>
-                <th>{{ i18n "BatchEntryTableHeaderNote" }}</th>
+                <th class="col s12 m2">{{ i18n "BatchEntryTableHeaderType" }}</th>
+                <th class="col s12 m2">{{ i18n "BatchEntryTableHeaderQuantity" }}</th>
+                <th class="col s12 m2">{{ i18n "BatchEntryTableHeaderTotalPrice" }}</th>
+                <th class="col s12 m2">{{ i18n "BatchEntryTableHeaderDate" }}</th>
+                <th class="col s12 m3">{{ i18n "BatchEntryTableHeaderNote" }}</th>
+                <th class="col s12 m1"></th>
             </tr>
         </thead>
         <tbody>
             {{#each entries}}
             <tr>
-                <td>{{ type }}</td>
-                <td>{{ quantity }}</td>
-                <td>{{ totalPrice }}</td>
-                <td>{{ formatDate entryDate 'MMMM Do YYYY' }}</td>
-                <td>{{ Note }}</td>
+                <td class="col s12 m2">{{ type }}</td>
+                <td class="col s12 m2">{{ quantity }}</td>
+                <td class="col s12 m2">{{ totalPrice }}</td>
+                <td class="col s12 m2">{{ formatDate entryDate 'MMMM Do YYYY' }}</td>
+                <td class="col s12 m3">{{ note }}</td>
+                <td class="col s12 m1">
+                    <form action="{{url "batches"}}/{{batch}}{{url "entries"}}/{{_id}}" method="POST" id="delete-form">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn red">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </form>
+                </td>
             </tr>
             {{/each}}
         </tbody>

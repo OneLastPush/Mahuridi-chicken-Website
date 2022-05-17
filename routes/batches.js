@@ -32,12 +32,41 @@ router.get('/:id', ensureAuth, async (req, res) => {
             .populate('user')
             .lean()
 
+        let entries = await Entry.find({
+            batch: req.params.id
+        }).lean()
+
+
+        let numberEggs = 0;
+        let spentAmount = 0;
+        let revenueAmount = 0;
+
+        entries.forEach(entry => {
+            if (entry.type === 'Purchased') {
+                numberEggs += entry.quantity
+                spentAmount += entry.totalPrice
+            } else {
+                numberEggs -= entry.quantity
+                if (entry.type === 'Sold') {
+                    revenueAmount += entry.totalPrice
+                }
+            }
+        })
+        let overview = {
+            numberEggs: numberEggs,
+            spentAmount: spentAmount,
+            revenueAmount: revenueAmount,
+            balance: (revenueAmount - spentAmount),
+        }
+
         if (!batch) {
             return res.render('error/404')
         }
-        
+
         res.render('batches/show', {
-            batch
+            batch,
+            entries,
+            overview
         })
 
     } catch (err) {
@@ -72,12 +101,12 @@ router.get('/edit/:id', ensureAuth, async (req, res) => {
         const batch = await Batch.findOne({
             _id: req.params.id
         })
-        .lean()
+            .lean()
 
         let entries = await Entry.find({
             batch: req.params.id
         })
-        .lean()
+            .lean()
 
         if (!batch) {
             return res.render('error/404')
@@ -144,10 +173,7 @@ router.delete('/:id', ensureAuth, async (req, res) => {
         if (batch.user != req.user.id) {
             res.redirect('/batches')
         } else {
-            batch = await Batch.findOneAndUpdate({ _id: req.params.id }, req.body, {
-                new: true,
-                runValidators: true,
-            })
+            batch = await Batch.deleteOne({ _id: req.params.id })
 
             res.redirect('/dashboard')
         }
