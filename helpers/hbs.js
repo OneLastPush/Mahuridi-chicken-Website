@@ -51,4 +51,7 @@ module.exports = {
   url: function (name) {
     return urls[name];
   },
+  compareStrings: function(p, q, options) {
+    return (p == q) ? options.fn(this) : options.inverse(this);
+  },
 }

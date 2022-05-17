@@ -16,3 +16,7 @@ a {
     float: left;
     margin-right: 10px;
 }
+
+.incubation-tableRow-Dashboard {
+    background-color: rgb(231, 227, 227) !important;
+}

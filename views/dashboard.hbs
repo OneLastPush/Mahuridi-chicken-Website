@@ -2,37 +2,49 @@
 <h3>{{ i18n "Welcome" }} {{name}}</h3>
 <p>{{ i18n "DashboardBatchLabel" }}</p>
 {{#if batches}}
-    <table class="striped">
-        <thead>
-            <tr>
-                <th>{{ i18n "DashboardTableHeaderName" }}</th>
-                <th>{{ i18n "DashboardTableHeaderDate" }}</th>
-                <th>{{ i18n "DashboardTableHeaderType" }}</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each batches}}
-                <tr>
-                    <td><a href="{{url "batches"}}/{{_id}}">{{name}}</a></td>
-                    <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
-                    <td><span class="dash-status">{{type}}</span></td>
-                    <td>
-                        <a href="{{url "editBatch"}}/{{_id}}" class="btn btn-float">
-                            <i class="fas fa-plus"></i>
-                        </a>
-                        
-                        <form action="{{url "batches"}}/{{_id}}" method="POST" id="delete-form">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn red">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            {{/each}}
-        </tbody>
-    </table>
+<table class="">
+    <thead>
+        <tr>
+            <th>{{ i18n "DashboardTableHeaderName" }}</th>
+            <th>{{ i18n "DashboardTableHeaderDate" }}</th>
+            <th>{{ i18n "DashboardTableHeaderType" }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each batches}}
+        {{#compareStrings this.stage "Incubation" }}
+        <tr class="incubation-tableRow-Dashboard">
+            {{else}}
+        <tr>
+            {{/compareStrings}}
+
+            <td><a href="{{url "batches"}}/{{_id}}">{{name}}</a></td>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+            <td><span class="dash-status">{{type}}</span></td>
+            <td>
+
+                {{#compareStrings this.stage "Incubation" }}
+                <a href="#!" class="btn btn-float blue">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </a>
+                {{/compareStrings}}
+
+                <a href="{{url "editBatch"}}/{{_id}}" class="btn btn-float">
+                    <i class="fas fa-plus"></i>
+                </a>
+
+                <form action="{{url "batches"}}/{{_id}}" method="POST" id="delete-form">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn red">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
 {{else}}
-    <p>{{ i18n "DashboardNoBatchFound" }}</p>
+<p>{{ i18n "DashboardNoBatchFound" }}</p>
 {{/if}}
