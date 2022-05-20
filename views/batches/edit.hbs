@@ -1,6 +1,6 @@
 <h3></h3>
 <div class="row">
-    <div class="card center-align">
+    <div class="card center-align card-custom-padding">
         <h5 class="card-title">{{ i18n "editbatchTitle" }}</h5>
         <form class="card-content" action="{{url "batches"}}/{{batch._id}}" method="POST" class="col s12">
             <input type="hidden" name="_method" value="PUT">
@@ -33,7 +33,7 @@
 </div>
 
 <div class="row">
-    <div class="card center-align">
+    <div class="card center-align card-custom-padding">
         <h5 class="card-title">{{ i18n "createBatchEntry" }}</h5>
         <form action="{{ url "batches" }}/{{ batch._id }}{{ url "addEntry" }}" method="POST" class="card-content">
             <input type="hidden" name="_method" value="POST">
@@ -113,7 +113,7 @@
                 <td class="col s12 m1">
                     <form action="{{url "batches"}}/{{batch}}{{url "entries"}}/{{_id}}" method="POST" id="delete-form">
                         <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn red">
+                        <button type="submit" class="btn red" style="margin: 5px;">
                             <i class="fa-solid fa-trash-can"></i>
                         </button>
                     </form>

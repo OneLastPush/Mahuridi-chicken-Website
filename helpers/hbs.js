@@ -1,6 +1,6 @@
 const moment = require('moment')
 const i18n = require('i18n')
-const urls = require('../routes/urls.json');
+const urls = require('../routes/urls.json')
 
 module.exports = {
   formatDate: function (date, format) {
@@ -43,15 +43,15 @@ module.exports = {
       )
   },
   i18n: function () {
-    return i18n.__.apply(this, arguments);
+    return i18n.__.apply(this, arguments)
   },
   __n: function () {
-    return i18n.__n.apply(this, arguments);
+    return i18n.__n.apply(this, arguments)
   },
   url: function (name) {
-    return urls[name];
+    return urls[name]
   },
   compareStrings: function(p, q, options) {
-    return (p == q) ? options.fn(this) : options.inverse(this);
+    return (p == q) ? options.fn(this) : options.inverse(this)
   },
 }

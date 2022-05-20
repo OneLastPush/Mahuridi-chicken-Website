@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const morgan = require('morgan')
-const i18nModule = require('i18n');
+const i18nModule = require('i18n')
 
 const connectDB = require('./config/db')
 
