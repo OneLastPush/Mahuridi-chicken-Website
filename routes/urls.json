@@ -4,6 +4,7 @@
     "editBatch" : "/batches/edit",
     "dashboard": "/dashboard",
     "addEntry": "/addEntry",
-    "entries": "/entries"
+    "entries": "/entries",
+    "user": "/user"
 
 }

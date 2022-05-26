@@ -7,11 +7,11 @@
             <div class="card-content">
                 <span class="card-title">{{ batch.name }} - {{formatDate batch.createdAt 'MMMM Do YYYY, h:mm:ss a'}}</span>
                 <hr />
-                 <p><b>Status :</b> {{ i18n batch.stage }}</p>
-                <p><b>Count :</b> {{ overview.numberEggs }}</p>
-                <p><b>Amount spent :</b>  {{ overview.spentAmount }}</p>
-                <p><b>Revenue amount : </b>{{ overview.revenueAmount }}</p>
-                <p><b>Balance amount : </b>{{ overview.balance }}</p>
+                 <p><b>{{ i18n "Status"}} :</b> {{ i18n batch.stage }}</p>
+                <p><b>{{ i18n "Count"}} :</b> {{ overview.numberEggs }}</p>
+                <p><b>{{ i18n "AmountSpent"}} :</b>  {{ overview.spentAmount }}</p>
+                <p><b>{{ i18n "RevenueAmount"}} : </b>{{ overview.revenueAmount }}</p>
+                <p><b>{{ i18n "BalanceAmount"}} : </b>{{ overview.balance }}</p>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
                 <img src="{{batch.user.image}}" class="circle responsive-img img-small">
             </div>
             <div class="card-action">
-                <a href="/batches/user/{{batch.user._id}}">More From {{batch.user.firstName}}</a>
+                <a href="{{ url "user" }}/{{batch.user._id}}">{{ i18n "MoreInfo"}} {{batch.user.firstName}}</a>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
 <br />
 <div class="row">
     {{#if entries}}
-    <h5>Details</h5>
+    <h5>{{ i18n "DetailsTitle" }}</h5>
     <table class="striped">
         <thead>
             <tr>

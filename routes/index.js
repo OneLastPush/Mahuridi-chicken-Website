@@ -17,7 +17,7 @@ router.get('/', ensureGuest, (req, res) => {
 //@route    GET /dashboard
 router.get('/dashboard', ensureAuth, async (req, res) => {
     try {
-        const batches = await Batch.find({ user: req.user.id }).lean()
+        const batches = await Batch.find({ user: req.user.id, isDeleted: false }).lean()
         res.render('dashboard', {
             name: req.user.firstName,
             batches

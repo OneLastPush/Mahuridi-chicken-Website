@@ -50,5 +50,14 @@
     "BatchEntryTableHeaderNote": "Note",
 
     "DeleteBatchTitleLabel": "Supprimer ce lot",
-    "DeleteBatchConfirmationText": "Êtes-vous sûre de supprimer ce lot?"
+    "DeleteBatchConfirmationText": "Êtes-vous sûre de supprimer ce lot?",
+
+    "Status": "Statut",
+	"Count": "Total",
+	"AmountSpent" : "Montant dépensé (BIF)",
+	"RevenueAmount" : "Revenue",
+	"BalanceAmount": "Profit",
+
+    "MoreInfo" : "Pour plus d'information sur",
+    "DetailsTitle" : "Détails"
 }

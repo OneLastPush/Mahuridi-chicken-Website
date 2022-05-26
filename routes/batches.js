@@ -75,25 +75,6 @@ router.get('/:id', ensureAuth, async (req, res) => {
     }
 })
 
-//@desc     User batches
-//@route    GET /batches/user/:userid
-router.get('/user/:userId', ensureAuth, async (req, res) => {
-    try {
-        const batches = await Batch.find({
-            user: req.params.userId
-        })
-            .populate('user')
-            .lean()
-
-        res.render('batches/index', {
-            batches
-        })
-    } catch (err) {
-        console.log(err)
-        return res.render('error/500')
-    }
-})
-
 //@desc     Show edit page
 //@route    GET /batches/edit/id
 router.get('/edit/:id', ensureAuth, async (req, res) => {
@@ -165,7 +146,7 @@ router.put('/:id', ensureAuth, async (req, res) => {
 router.delete('/:id', ensureAuth, async (req, res) => {
     try {
         let batch = await Batch.findById(req.params.id).lean()
-        console.log(batch)
+        
         if (!batch) {
             return res.render('error/404')
         }
@@ -173,7 +154,10 @@ router.delete('/:id', ensureAuth, async (req, res) => {
         if (batch.user != req.user.id) {
             res.redirect('/batches')
         } else {
+            
             req.body.active = false
+            req.body.isDeleted = true
+
             batch = await Batch.findOneAndUpdate({ _id: req.params.id }, req.body, {
                 new: true,
                 runValidators: true,
