@@ -54,4 +54,8 @@ module.exports = {
   compareStrings: function(p, q, options) {
     return (p == q) ? options.fn(this) : options.inverse(this);
   },
+  concat : function() {
+    arguments = [...arguments].slice(0, -1);
+    return arguments.join('');
+  },
 }

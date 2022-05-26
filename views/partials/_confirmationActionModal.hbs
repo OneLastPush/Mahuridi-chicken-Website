@@ -1,0 +1,17 @@
+<div id="id-modal-{{elementID}}" class="modal">
+    <span onclick="document.getElementById('id-modal-{{elementID}}').style.display='none'" class="close" title="Close Modal">×</span>
+    <form class="modal-content" action="{{ DeleteURL }}" method="POST" id="delete-form-{{elementID}}">
+        <input type="hidden" name="_method" value="DELETE">
+        <div class="container">
+            <h1>{{ DeleteTitleLabel }}</h1>
+            <p>{{ DeleteConfirmationLabel }}</p>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id-modal-{{elementID}}').style.display='none'"
+                    class="cancelbtn">{{i18n "CancelLabel"}}</button>
+                <button type="submit" onclick="document.getElementById('id-modal-{{elementID}}').style.display='none'"
+                    class="deletebtn">{{i18n "DeleteLabel"}}</button>
+            </div>
+        </div>
+    </form>
+</div>

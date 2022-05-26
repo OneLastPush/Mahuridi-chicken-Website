@@ -26,6 +26,7 @@
     "entryDateLabel": "Date",
     "quantityLabel": "Quantité",
     "CancelLabel": "Annulez",
+    "DeleteLabel": "Supprimez",
     "nameLabel": "Nom",
     "stageLabel": "Étape",
 
@@ -46,5 +47,8 @@
     "BatchEntryTableHeaderQuantity": "Quantité",
     "BatchEntryTableHeaderTotalPrice": "Montant déboursé (BIF)",
     "BatchEntryTableHeaderDate": "Date",
-    "BatchEntryTableHeaderNote": "Note"
+    "BatchEntryTableHeaderNote": "Note",
+
+    "DeleteBatchTitleLabel": "Supprimer ce lot",
+    "DeleteBatchConfirmationText": "Êtes-vous sûre de supprimer ce lot?"
 }

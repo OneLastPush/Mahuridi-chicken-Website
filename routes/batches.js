@@ -136,7 +136,7 @@ router.put('/:id', ensureAuth, async (req, res) => {
 router.delete('/:id', ensureAuth, async (req, res) => {
     try {
         let batch = await Batch.findById(req.params.id).lean()
-
+        console.log(batch)
         if (!batch) {
             return res.render('error/404')
         }
@@ -144,6 +144,7 @@ router.delete('/:id', ensureAuth, async (req, res) => {
         if (batch.user != req.user.id) {
             res.redirect('/batches')
         } else {
+            req.body.active = false
             batch = await Batch.findOneAndUpdate({ _id: req.params.id }, req.body, {
                 new: true,
                 runValidators: true,

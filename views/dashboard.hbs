@@ -1,4 +1,4 @@
-<h6>{{i18n "DashboardTitle" }}</h6>
+<h6>{{ i18n "DashboardTitle" }}</h6>
 <h3>{{ i18n "Welcome" }} {{name}}</h3>
 <p>{{ i18n "DashboardBatchLabel" }}</p>
 {{#if batches}}
@@ -33,18 +33,20 @@
                 <a href="{{url "editBatch"}}/{{_id}}" class="btn btn-float">
                     <i class="fas fa-plus"></i>
                 </a>
-
-                <form action="{{url "batches"}}/{{_id}}" method="POST" id="delete-form">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn red">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </form>
+ 
+                <button onclick="document.getElementById('id-modal-{{_id}}').style.display='block'" class="btn red">
+                    <i class="fas fa-trash"></i>
+                </button>
+ 
+                {{> _confirmationActionModal DeleteTitleLabel=(i18n "DeleteBatchTitleLabel") 
+                        DeleteConfirmationLabel=(i18n "DeleteBatchConfirmationText") 
+                        DeleteURL = (concat (url "batches") "/" _id)
+                        elementID= _id }}
             </td>
         </tr>
         {{/each}}
     </tbody>
 </table>
 {{else}}
-<p>{{ i18n "DashboardNoBatchFound" }}</p>
+    <p>{{ i18n "DashboardNoBatchFound" }}</p>
 {{/if}}
