@@ -3,6 +3,7 @@
     "createBatch" : "/batches/add",
     "editBatch" : "/batches/edit",
     "dashboard": "/dashboard",
-    "addEntry": "/addEntry"
+    "addEntry": "/addEntry",
+    "entries": "/entries"
 
 }

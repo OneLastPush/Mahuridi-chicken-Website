@@ -18,5 +18,9 @@ a {
 }
 
 .incubation-tableRow-Dashboard {
-    background-color: rgb(231, 227, 227) !important;
+    background-color: rgb(199, 211, 228) !important;
+}
+
+.card-custom-padding {
+    padding: 6px;
 }
